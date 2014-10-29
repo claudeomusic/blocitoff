@@ -7,12 +7,29 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<p>
+<div class="container">
   <%= flash[:notice] if flash[:notice] %>
   <%= flash[:error] if flash[:error] %>
-</p>
+      <div class="pull-right user-info">
+
+      <% if current_user %>
+
+        <%= link_to edit_user_registration_path, class: 'btn btn-primary btn-sm' do %>
+          <span class="glyphicon glyphicon-user"></span>
+        <% end %>
+         
+        <%= link_to destroy_user_session_path, method: :delete, class: 'btn btn-primary btn-sm' do %>
+          <span class="glyphicon glyphicon-log-out"></span>
+        <% end %>
+
+      <% else %>
+        <%= link_to "Sign In", new_user_session_path %> or
+        <%= link_to "Sign Up", new_user_registration_path %>
+      <% end %>
+
+      </div>
 
 <%= yield %>
-
+</div>
 </body>
 </html>
