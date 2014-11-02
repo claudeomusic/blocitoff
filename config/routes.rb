@@ -2,7 +2,7 @@ Blocitoff::Application.routes.draw do
 
   devise_for :users
   
-  resources :todos, only: [:new, :create, :show]
+  resources :todos, only: [:index,:new, :create, :destroy]
 
   root to: 'welcome#index'
 

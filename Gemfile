@@ -49,6 +49,7 @@ end
 # gems i added
 gem 'faker'
 gem 'devise'
+gem 'pundit'
 gem 'bootstrap-sass', '~> 3.1.1'
 gem 'figaro', '1.0'
 

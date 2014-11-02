@@ -1,0 +1,6 @@
+<%= form_for todo, remote: true do |form| %>
+
+  <%= form.text_field :description, class: 'form-control', placeholder: 'Description' %>
+
+  <%= form.submit 'Save', class: 'btn btn-success' %>
+<% end %>

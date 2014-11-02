@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20141028205341) do
     t.integer  "user_id"
   end
 
+  add_index "todos", ["user_id"], name: "index_todos_on_user_id"
+
   create_table "users", force: true do |t|
     t.string   "name"
     t.string   "email",                  default: "", null: false

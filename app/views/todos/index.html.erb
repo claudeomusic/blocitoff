@@ -1,0 +1,31 @@
+<h2 class="text-center"><%= current_user.name.capitalize %>'s Todos</h2>
+
+<% if current_user.todos.count > 0 %>
+<table class="table table-hover table-condensed table-striped todolist js-todos">
+  <thead>
+  <tr>
+    <td>
+      <h4>Description</h4>
+    </td>
+    <td>
+      <h4>Days left</h4>
+    </td>
+    <td>
+      <h4>Complete</h4>
+    </td>
+  </thead>
+  <tbody>
+
+      <%= render @todos %>
+
+
+  </tbody>
+</table>
+
+<% else %>
+<h3 class="text-center"> You do not currently have any tasks in your todo list.</h3>
+
+<% end %>
+<div class='submission-form'>
+  <%= render partial: 'form', locals: {todo: @todo} %>
+</div>

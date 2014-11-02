@@ -1,0 +1,13 @@
+<%= content_tag :tr, id: "todo-#{todo.id}" do %>
+
+  <td>
+    <%= todo.description %>
+  </td>
+  <td>
+    <%= todo.days_left %>
+  </td>
+  <td>
+    <%= link_to "Finished", [todo], method: :delete, remote: true, class: 'btn btn-success'%>
+  </td>
+
+<% end %>
