@@ -1,5 +1,5 @@
 <% if @todo.destroyed? %>
-  $('#todo-' +<%= @todo_id %>).hide();
+  $('#todo-' +<%= @todo_id %>).fadeOut(1000);
 <% else %>
   $('#todo-' +<%= @todo_id %>).append("<div class='alert alert-error'><%= flash[:error] %></div>");
 <% end %>

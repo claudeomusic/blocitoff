@@ -16,9 +16,9 @@ before_filter :authenticate_user!, only: [:todos]
     @todo_new = Todo.new
 
     if @todo.save
-      flash[:notice] = 'Your new TODO was saved'
+      #flash[:notice] = 'Your new TODO was saved'
     else
-      flash[:error] = 'Please re-enter your TODO.'
+      #flash[:error] = 'Please re-enter your TODO.'
     end
 
     respond_with(@todo) do |format|
@@ -32,9 +32,9 @@ before_filter :authenticate_user!, only: [:todos]
     @todo_id = @todo.id
 
     if @todo.destroy
-      flash[:notice] = "Todo was removed."
+      #flash[:notice] = "Todo was removed."
     else
-      flash[:error] = "Todo item couldn't be deleted. Try again."
+      #flash[:error] = "Todo item couldn't be deleted. Try again."
     end
 
     respond_with(@todo) do |format|
